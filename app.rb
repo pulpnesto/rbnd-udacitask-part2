@@ -31,13 +31,13 @@ new_list = UdaciList.new # Should create a list called "Untitled List"
 new_list.add("event", "Life happens")
 # new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
 # new_list.add("link", "http://ruby-doc.org")
-new_list.all
+
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
 # new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error
 # new_list.delete(9) # Throws an IndexExceedsListSize error
 # new_list.add("todo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error
-
+new_list.all
 # DISPLAY UNTITLED LIST
 # ---------------------
 # new_list.all

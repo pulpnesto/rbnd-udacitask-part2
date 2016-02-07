@@ -9,8 +9,7 @@ class TodoItem
   end
 
   def details
-    date_hash = {}
-    date_hash[:due_date] = @due
+    date_hash = {due_date: @due}
     format_description(@description) + "due: " +
     format_date(date_hash) +
     format_priority(@priority)

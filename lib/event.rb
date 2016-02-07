@@ -10,9 +10,7 @@ class EventItem
 
 
   def details
-    date_hash = {}
-    date_hash[:due_date] = @start_date
-    date_hash[:end_date] = @end_date
+    date_hash = {due_date: @start_date, end_date: @end_date}
     format_description(@description) + "event dates: " + format_date(date_hash)
   end
 end
