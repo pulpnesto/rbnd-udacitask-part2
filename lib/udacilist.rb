@@ -20,21 +20,29 @@ class UdaciList
   end
 
   def all
-    rows = []
     table_header_array = table_header(@title)
-    table_array = table_body(@items)
-    table_header_array.each {|item| rows << item}
-    table_array.each {|item| rows << item}
-    table = Terminal::Table.new :rows => rows
-    puts table
+    table_body_array = table_body(@items)
+    print_table(table_header_array, table_body_array)
+  end
+
+
+  def filter(item_type)
+    item_array = @items.select {|item| item.type == item_type}
+    if item_array.empty?
+      puts "Sorry, '#{item_type}' does not exist as an item type."
+    else
+      table_header_array = table_header("Filter by #{item_type}")
+      table_body_array = table_body(item_array)
+      print_table(table_header_array, table_body_array)
+    end
   end
 
   def table_header(title)
-    rows = []
+    table_array = []
     puts title
-    rows << ['No.',"Type", "Description", "Information", "Priority"]
-    rows << :separator
-    rows
+    table_array << ['No.',"Type", "Description", "Information", "Priority"]
+    table_array << :separator
+    table_array
   end
 
   def table_body(items_to_format)
@@ -50,25 +58,25 @@ class UdaciList
     table_array
   end
 
-  def add_error_check(type, options={})
-    raise UdaciListErrors::InvalidTypeError if (type != "todo" &&
-                                                type != "link" &&
-                                                type != "event")
-    raise UdaciListErrors::InvalidPriorityValue if ( options[:priority] != "high" &&
-                                    options[:priority] != "medium" &&
-                                    options[:priority] != "low" &&
-                                    options[:priority] != nil )
-  end
-
-  def filter(item_type)
+  def print_table (header, body)
     rows = []
-    table_header_array = table_header("Filter by #{item_type}")
-    item_array = @items.select {|item| item.type == item_type}
-    table_body_array = table_body(item_array)
-    table_header_array.each {|item| rows << item}
-    table_body_array.each {|item| rows << item}
+    header.each {|item| rows << item}
+    body.each {|item| rows << item}
     table = Terminal::Table.new :rows => rows
     puts table
+    puts ""
+  end
+
+  def add_error_check(type, options={})
+    raise UdaciListErrors::InvalidTypeError if
+                  ( type != "todo" &&
+                    type != "link" &&
+                    type != "event" )
+    raise UdaciListErrors::InvalidPriorityValue if
+                  ( options[:priority] != "high" &&
+                    options[:priority] != "medium" &&
+                    options[:priority] != "low" &&
+                    options[:priority] != nil )
   end
 
 end

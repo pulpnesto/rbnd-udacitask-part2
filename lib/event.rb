@@ -15,7 +15,7 @@ class EventItem
     date_hash = {due_date: @start_date, end_date: @end_date}
     detail_hash[:type] = @type
     detail_hash[:description] = format_description(@description)
-    detail_hash[:date] = "event dates: " + format_date(date_hash)
+    detail_hash[:date] = "event dates: " + format_date(@type, date_hash)
     detail_hash
   end
 end

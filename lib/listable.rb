@@ -5,18 +5,20 @@ module Listable
   end
 
   def format_priority(priority)
-    value = " ⇧".colorize(:magenta) if priority == "high"
-    value = " ⇨".colorize(:cyan) if priority == "medium"
-    value = " ⇩".colorize(:green) if priority == "low"
+    value = "   ⇧".colorize(:magenta) if priority == "high"
+    value = "   ⇨".colorize(:red) if priority == "medium"
+    value = "   ⇩".colorize(:green) if priority == "low"
     value = "" if !priority
     return value
   end
 
-  def format_date(options={})
+  def format_date(item_type, options={})
     if options[:end_date]
       dates = options[:due_date].strftime("%D") + " -- " + options[:end_date].strftime("%D")
-    else
+    elsif item_type == 'event'
       options[:due_date] ? options[:due_date].strftime("%D") : "N/A"
+    else
+      options[:due_date] ? options[:due_date].strftime("%D") : "No due date"
     end
   end
 
