@@ -15,7 +15,7 @@ class UdaciList
   end
 
   def delete(index)
-    raise IndexExceedsListSize if index < 1 || index > @items.length
+    raise UdaciListErrors::IndexExceedsListSize if index < 1 || index > @items.length
     @items.delete_at(index - 1)
   end
 
@@ -29,8 +29,10 @@ class UdaciList
   end
 
   def add_error_check(type, options={})
-    raise InvalidTypeError if type != "todo" && type != "link" && type != "event"
-    raise InvalidPriorityValue if ( options[:priority] != "high" &&
+    raise UdaciListErrors::InvalidTypeError if (type != "todo" &&
+                                                type != "link" &&
+                                                type != "event")
+    raise UdaciListErrors::InvalidPriorityValue if ( options[:priority] != "high" &&
                                     options[:priority] != "medium" &&
                                     options[:priority] != "low" &&
                                     options[:priority] != nil )
