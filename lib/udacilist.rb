@@ -9,9 +9,9 @@ class UdaciList
   def add(type, description, options={})
     type = type.downcase
     add_error_check(type, options)
-    @items.push TodoItem.new(description, options) if type == "todo"
-    @items.push EventItem.new(description, options) if type == "event"
-    @items.push LinkItem.new(description, options) if type == "link"
+    @items.push TodoItem.new(type, description, options) if type == "todo"
+    @items.push EventItem.new(type, description, options) if type == "event"
+    @items.push LinkItem.new(type, description, options) if type == "link"
   end
 
   def delete(index)
@@ -20,12 +20,20 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.length
+    rows = []
     puts @title
-    puts "-" * @title.length
+    rows << ['No.',"Type", "Description", "Information", "Priority"]
+    rows << :separator
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      table_parser = item.details
+      rows << ["#{position + 1}",
+               table_parser[:type],
+               table_parser[:description],
+               table_parser[:date],
+               table_parser[:priority]]
     end
+    table = Terminal::Table.new :rows => rows
+    puts table
   end
 
   def add_error_check(type, options={})

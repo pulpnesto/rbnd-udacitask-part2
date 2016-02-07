@@ -13,8 +13,6 @@ module Listable
   end
 
   def format_date(options={})
- #   options[:due_date] = Chronic.parse(options[:due_date])
- #   options[:end_date] = Chronic.parse(options[:end_date])
     if options[:end_date]
       dates = options[:due_date].strftime("%D") + " -- " + options[:end_date].strftime("%D")
     else
