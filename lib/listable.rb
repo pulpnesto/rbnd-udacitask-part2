@@ -14,11 +14,11 @@ module Listable
 
   def format_date(item_type, options={})
     if options[:end_date]
-      dates = options[:due_date].strftime("%D") + " -- " + options[:end_date].strftime("%D")
+      dates = options[:due_date].strftime("%D").colorize(:blue) + " -- " + options[:end_date].strftime("%D").colorize(:blue)
     elsif item_type == 'event'
-      options[:due_date] ? options[:due_date].strftime("%D") : "N/A"
+      options[:due_date] ? options[:due_date].strftime("%D").colorize(:blue) : "N/A"
     else
-      options[:due_date] ? options[:due_date].strftime("%D") : "No due date"
+      options[:due_date] ? options[:due_date].strftime("%D").colorize(:blue) : "No due date"
     end
   end
 

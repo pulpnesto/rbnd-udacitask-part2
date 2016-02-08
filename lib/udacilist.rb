@@ -19,6 +19,11 @@ class UdaciList
     @items.delete_at(index - 1)
   end
 
+  def change_priority(index, degree)
+    item = @items[index-1]
+    item.priority = degree
+  end
+
   def all
     table_header_array = table_header(@title)
     table_body_array = table_body(@items)
@@ -31,10 +36,17 @@ class UdaciList
     if item_array.empty?
       puts "Sorry, '#{item_type}' does not exist as an item type."
     else
-      table_header_array = table_header("Filter by #{item_type}")
+      table_header_array = table_header("Filter by Type: #{item_type}")
       table_body_array = table_body(item_array)
       print_table(table_header_array, table_body_array)
     end
+  end
+
+  def find_priority_items(degree)
+    item_array = @items.select {|item| item.priority == degree}
+    table_header_array = table_header("!! #{degree.capitalize} priority tasks !!")
+    table_body_array = table_body(item_array)
+    print_table(table_header_array, table_body_array)
   end
 
   def table_header(title)

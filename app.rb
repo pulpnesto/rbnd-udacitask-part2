@@ -47,6 +47,25 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
-new_list.filter("back")
+#new_list.filter("back")
+
+puts "*****  FEATURES ADDED   *******"
+puts ""
+second_list = UdaciList.new(title: "New Features")
+second_list.add("event", "Conference", start_date: "2016-03-28", end_date: "2016-04-20", priority: "medium")
+second_list.add("event", "Birthday Party", start_date: "2016-05-08", priority: "low")
+second_list.add("link", "https://cnn.com", site_name: "CNN Homepage", priority: "low")
+second_list.add("link", "http://espn.com", site_name: "ESPN", priority: "high")
+second_list.add("todo", "Eat dinner", priority: "high")
+second_list.add("todo", "Go dancing", due: "in 24 hours", priority: "medium")
+puts "#1 -- Allow all item types to have a priority and ability to update priorities."
+puts ""
+second_list.all
+second_list.change_priority(6, "high")
+second_list.all
+puts "#2 -- Search by priority level."
+puts ""
+second_list.find_priority_items("high")
+
 
 
