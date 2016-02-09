@@ -5,7 +5,7 @@ module UdaciListErrors
   class InvalidItemType < StandardError
   end
 
-	# Class for indicating index is out of rancge of array
+  # Class for indicating index is out of rancge of array
   class IndexExceedsListSize < StandardError
   end
 
