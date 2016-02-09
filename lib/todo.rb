@@ -1,8 +1,12 @@
 class TodoItem
   include Listable
+
+  # Instance variables
   attr_reader :description, :due, :type
   attr_accessor :priority
 
+  # Initialize new todo item with description, type and optional due dates and priority flag.
+  # The due variable initialization uses the chronic gem to parse dates.
   def initialize(type, description, options={})
     @description = description
     @type = type
@@ -10,6 +14,7 @@ class TodoItem
     @priority = options[:priority]
   end
 
+  # Method to compile todo info into a hash
   def details
     date_hash = {due_date: @due}
     detail_hash = {}

@@ -1,8 +1,12 @@
 class EventItem
   include Listable
+
+  # Instance variables
   attr_reader :description, :start_date, :end_date, :type
   attr_accessor :priority
 
+  # Initialize new event item with description, type and optional priority flag, start date,
+  # and end date. The due variable initialization uses the chronic gem to parse dates.
   def initialize(type, description, options={})
     @type = type
     @description = description
@@ -11,7 +15,7 @@ class EventItem
     @priority = options[:priority]
   end
 
-
+  # Method to compile event info into a hash
   def details
     detail_hash = {}
     date_hash = {due_date: @start_date, end_date: @end_date}
