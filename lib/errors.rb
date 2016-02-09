@@ -3,10 +3,10 @@ module UdaciListErrors
 
   # Class for invalid item error
   class InvalidItemType < StandardError
-	end
+  end
 
 	# Class for indicating index is out of rancge of array
-	class IndexExceedsListSize < StandardError
+  class IndexExceedsListSize < StandardError
   end
 
   # Class for invalid priority error

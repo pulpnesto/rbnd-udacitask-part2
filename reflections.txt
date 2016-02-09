@@ -1,13 +1,28 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+
+	I used terminal-table (https://github.com/tj/terminal-table) to format my output. It required a rewrite of the udacilist.all method to create an array of arrays needed for terminal-table to produce formatted output. It makes the output much more readable than the default output.
+
 2. Describe the 2 features you added to the project.
   a) Feature 1...
+  	  	I added a feature that allows all the item types to have an optional priority value and to change existing priority flags if so desired.
+
   b) Feature 2...
+  			In case you wanted to find/filter all of a certain priority item in one list, I added a priority filter. This method allows you to enter a priority value and produce an output table of all the items with the desired priority.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+
+	This project took about 7 hours. I got caught up for a while trying to make a new feature that would colorize a due date red if it was within a certain time range. I couldn't quite get it to work right so I think I will play with that some more in the future.
+
+
 2. What was the most rewarding challenge you conquered?
+	When the instructions outlined that part of the challenge of the project was to take code someone else had written and extend it to what you wanted to change, I thought "Doesn't sound too hard". But once you see how someone else approached a problem and compare it to how you would have done it, it definitely makes you think through an approach several times. It's espcially challenging when to have to adapt what someone else wrote and modify it to make it do what you want it to do.
+
 3. What two additional features did you build? Why?
+	The two features largely revolve around the optional priority variable. I wanted to make all items have the ability to store a prioirity value and give the user the ability to change it, if need be. The second feature was to create a priority filter so you could quickly check what the high priority items were, for instance.
+
 4. Where do you still have room to grow?
+	Piggybacking on the challenge or reading/adapting code written by other people, I need to challenge myself to seek out other people's code. I did this a little bit when looking at the gems used in the project. I took the opportunity to read through the ruby files for the terminal-table gem. While the gem used a lot of stuff I haven't seen yet (a class inside of a class?), I could at least get the general idea of what was going on in some of the rb files. Definately a good way to learn new things in Ruby.

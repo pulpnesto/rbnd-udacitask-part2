@@ -1,0 +1,95 @@
+commit 86e3b99e343ef70019107f3a48cd2737b6351e58
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Mon Feb 8 21:06:21 2016 -0700
+
+    Comment files
+
+commit ef490c18391582cdbb4fb8707e6a2ef63e5f67fd
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sun Feb 7 21:32:43 2016 -0700
+
+    Add priority updating and searching features
+
+commit 8cb16b0836121e77dde9e4b93a7c541181a89171
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sun Feb 7 14:08:33 2016 -0700
+
+    Complete filter method
+
+commit 3b35ef82b5c505f2f9e856687debcda809d2aee3
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sun Feb 7 12:51:32 2016 -0700
+
+    Create filter method and refactor building table methods
+
+commit 96550f1fade8f1824cd7e5b77547675047937ad2
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sat Feb 6 22:34:43 2016 -0700
+
+    Implement terminal-table and add item_type in output from all method
+
+commit c9ab7ca2532cf73dcdefc4e32459f033922a9e76
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sat Feb 6 21:44:06 2016 -0700
+
+    Add and implement colorize and chronic gems
+
+commit bdda17c128709e77348ca309252d501babf8f571
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Sat Feb 6 17:50:23 2016 -0700
+
+    Add Errors module and error checks in udacilist.rb
+
+commit 50c2cc6b97c1af507a882342d4e771cde2d3af64
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Fri Feb 5 22:54:49 2016 -0700
+
+    Refactor format_date and format_name to Listable module
+
+commit ec70474e4ad6f19607f2dcc8d04ebbc5f898e012
+Author: pulpnesto <pulp.nesto@gmail.com>
+Date:   Fri Feb 5 21:46:01 2016 -0700
+
+    Initial commit. Refactor format_description to listable module.
+
+commit 68aab52057d8e55093ba1d8bb6bffb6e101d7392
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Thu Jan 14 16:33:03 2016 -0800
+
+    Updated README to clarify feature requirements
+
+commit 44c0ac9bbf25cfcb0fb2804df173024272b22079
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 13:15:43 2016 -0800
+
+    Change filter method requirement
+
+commit ff315acad10f611b79aaedfec65b11aef55a6378
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 11:52:22 2016 -0800
+
+    Add clarification about filter method
+
+commit ee74dea2ba39e201720aca9c29380f920a268600
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 16:32:37 2016 -0800
+
+    Add filter by item type demo to starter code
+
+commit 154160cf3b7ff1a29f5ef8e987a219852cac0f12
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:09:40 2016 -0800
+
+    Add links for gem sources
+
+commit 6c365dc917cd32a5e8c520160ec58198cc8cb6d1
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:06:54 2016 -0800
+
+    Add rubric link
+
+commit ad33c7f02fec47e51c72da5cde3f8032f7b8a111
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 10:58:34 2016 -0800
+
+    Initial commit

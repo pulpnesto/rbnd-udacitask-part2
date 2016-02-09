@@ -7,7 +7,7 @@ class LinkItem
 
   # Initialize new link items with type, description and optional name and priority
   def initialize(type, url, options={})
-  	@type = type
+    @type = type
     @description = url
     @site_name = options[:site_name]
     @priority = options[:priority]
@@ -15,7 +15,7 @@ class LinkItem
 
   # Method to compile site info into a hash
   def details
-  	detail_hash = {}
+    detail_hash = {}
     format_description(@description) + "site name: " + format_name(@site_name)
     detail_hash[:type] = @type
     detail_hash[:description] = format_description(@description)
